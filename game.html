@@ -1,0 +1,49 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<title>ゲーム</title>
+<script type="text/javascript">
+window.addEventListener('load', init);
+
+var canvas;
+var ctx;
+
+/**
+ * 初期化
+ */
+function init() {
+	canvas = document.getElementById('maincanvas');
+	ctx = canvas.getContext('2d');
+	canvas.width = 800;
+	canvas.height = 600;
+	
+	var image = new Image();
+	image.src = 'nicologo.png';
+	image.onload = function() {
+		// 画像ファイルが読み込み終わった時に呼ばれる関数
+		ctx.drawImage(image, 0, 0);
+	};
+
+
+	requestAnimationFrame(update);
+}
+
+function update() {
+	requestAnimationFrame(update);
+
+
+	render();
+}
+
+function render() {
+  // 全体をクリア
+  //ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+</script>
+</head>
+<body>
+	<canvas id="maincanvas"></canvas>
+ちぇぇぇぇぇん！
+</body>
+</html>
